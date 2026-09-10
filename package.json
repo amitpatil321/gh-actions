@@ -1,5 +1,6 @@
 {
   "name": "gh-actions",
+  "homepage": "https://github.com/amitpatil321/gh-actions/",
   "private": true,
   "version": "0.0.0",
   "type": "module",

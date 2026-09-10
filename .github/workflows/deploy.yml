@@ -32,11 +32,6 @@ jobs:
       - name: Build Application
         run: npm run build
 
-      - name: Delete old artifacts
-        uses: geekyeggo/delete-artifact@v2
-        with:
-          name: github-pages
-
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v4
         with:

@@ -17,6 +17,7 @@ env:
 
 jobs:
   build-and-deploy-to-azure:
+    environment: Azure
     runs-on: ubuntu-latest
 
     steps:

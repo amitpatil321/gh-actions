@@ -16,7 +16,7 @@ env:
   AZURE_WEBAPP_NAME: "default-react-app"
 
 jobs:
-  build-and-deploy:
+  build-and-deploy-to-azure:
     runs-on: ubuntu-latest
 
     steps:

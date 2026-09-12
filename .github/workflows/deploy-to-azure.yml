@@ -35,6 +35,29 @@ jobs:
       - name: Build React app
         run: npm run build
 
+      - name: Check Azure secrets
+        env:
+          AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+          AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+          AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+        run: |
+          if [ -z "$AZURE_CLIENT_ID" ]; then
+            echo "AZURE_CLIENT_ID is missing"
+            exit 1
+          fi
+
+          if [ -z "$AZURE_TENANT_ID" ]; then
+            echo "AZURE_TENANT_ID is missing"
+            exit 1
+          fi
+
+          if [ -z "$AZURE_SUBSCRIPTION_ID" ]; then
+            echo "AZURE_SUBSCRIPTION_ID is missing"
+            exit 1
+          fi
+
+          echo "All Azure secrets are available."
+
       - name: Azure CLI Login
         uses: azure/login@v2
         with:
